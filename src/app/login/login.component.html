@@ -1,0 +1,119 @@
+<!-- <button class="bg-midnight m-3" (click)="login()">Login</button> -->
+<!-- <button class="bg-midnight" (click)="logout()">Logout</button> -->
+
+<section class="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
+  <div class="container h-full p-10">
+    <div class="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+      <div class="w-8/12">
+        <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+          <div class="g-0 lg:flex lg:flex-wrap">
+            <!-- Left column container-->
+            <div class="px-4 md:px-0 lg:w-6/12">
+              <div class="md:mx-6 md:p-12">
+                <!--Logo-->
+                <div class="text-center">
+                  <img
+                    class="mx-auto w-48"
+                    src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    alt="logo" />
+                  <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
+                    Registros de Logs do Clisicheck
+                  </h4>
+                </div>
+
+                <form>
+                  <p class="mb-4">Por favor, clique em realize o login:</p>
+                  
+                  <!--Submit button-->
+                  <div class="mb-12 pb-1 pt-1 text-center">
+                    <button
+                      class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                      type="button"
+                      (click)="login()"
+                      data-te-ripple-init
+                      data-te-ripple-color="light"
+                      style="
+                        background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+                      ">
+                      Logar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right column container with background and description-->
+            <div
+              class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+              style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)">
+              <div class="px-4 py-6 text-white md:mx-6 md:p-12">
+                <h4 class="mb-6 text-xl font-semibold">
+                  Clisicheck
+                </h4>
+                <p class="text-sm text-justify">
+                  Aplicação para visualização de logs do Clisicheck. As informações apresentadas são dados 
+                  de tecnicos ao preparar sistemas de manutenção dos computadores da Bemol.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="h-screen flex justify-center">
+  <div class="container flex items-center justify-center shadow-xl">
+    <div class="container flex justify-center" >
+      <img src="../../assets/loginuser.jpg" class="w-9/12" alt="Login" />
+    </div>
+    <div class="container flex flex-col items-center">
+       <p class="font-bold text-xl mb-4">
+          Registro de Logs do Clisicheck
+        </p>
+
+        <button
+          type="submit"
+          (click)="login()"
+          class="inline-block w-3/5 rounded-md bg-tahiti text-xl font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+        >
+          Login
+        </button>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="h-screen">
+  <div class="container h-full px-6 py-24">
+    <div class="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between shadow-xl p-2">
+      <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+        <img
+          src="../../assets/loginuser.jpg"
+          class="w-8/12"
+          alt="Login"
+        />
+      </div>
+
+      
+      <div class="md:w-8/12 lg:ml-6 lg:w-5/12">
+        <p class="font-bold text-xl text-center mb-2">
+          Acesssar Logs do CLISICHECK
+        </p>
+
+        <button
+          type="submit"
+          (click)="login()"
+          class="inline-block w-full rounded-md bg-tahiti px-7 pb-2.5 pt-3 text-xl font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+          data-te-ripple-init
+          data-te-ripple-color="light"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</section> -->

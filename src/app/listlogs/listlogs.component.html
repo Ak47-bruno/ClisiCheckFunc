@@ -1,0 +1,100 @@
+<div *ngIf="loginDisplay" class="flex flex-col justify-center h-screen">
+  <div class="relative m-2">
+    <input
+      type="text"
+      id="simple-search"
+      [(ngModel)]="filtro"
+      class="bg-gray-50 text-gray-900 text-sm border rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 mb-1.5"
+      placeholder="Pesquise por UserName, ServiceTag, ComputerName, Template ou Server"
+      required
+    />
+    <p class="font-bold text-xl">REGISTRO DE LOGS DO CLISICHECK</p>
+  </div>
+  
+  <div class="overflow-x-auto sm:rounded ">
+    <!-- shadow-md sm:rounded-lg m-8 (CODIGO PARA MARGIN DA TABELA DA CLASSE ACIMA) -->
+    <!-- Mostrar Resultados por PAGINA -->
+    <!-- <div>
+        <label for="">Resultados por Pagina: </label>
+        <select (change)="onTableSizeChange($event)">
+            <option *ngFor="let size of tableSizes">
+                {{size}}
+            </option>
+        </select>
+        </div> -->
+    <table class="bg-midnight min-w-full h-80 text-sm text-gray-500">
+      <thead class="text-xs text-center text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-3">ServiceTag</th>
+          <th scope="col" class="px-6 py-3">UserName</th>
+          <th scope="col" class="px-6 py-3">ComputerName</th>
+          <th scope="col" class="px-6 py-3">Data</th>
+          <th scope="col" class="px-6 py-3">Template</th>
+          <th scope="col" class="px-6 py-3">Status</th>
+          <th scope="col" class="px-6 py-3">Server</th>
+          <th scope="col" class="px-6 py-3">Programas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let log of logs
+              | filter : filtro
+              | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index
+          "
+          class="bg-white border-b text-center dark:bg-gray-800 dark:border-gray-700"
+        >
+          <td class="px-6 py-4">
+            {{ log.ServiceTag }}
+          </td>
+          <th scope="row" class="px-6 py-4">
+            {{ log.UserName }}
+          </th>
+          <td class="px-6 py-4">
+            {{ log.ComputerName }}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            {{ log.Date }}
+          </td>
+          <td class="px-6 py-4">
+            {{ log.Template }}
+          </td>
+          <td class="px-6 py-4">
+            {{ log.Status }}
+          </td>
+          <td class="px-6 py-4">
+            {{ log.Server }}
+          </td>
+          <td class="px-6 py-4 text-start ">
+            {{ log.Programas }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex justify-around items-center">
+    <pagination-controls
+      previousLabel="Anterior"
+      nextLabel="Próximo"
+      (pageChange)="onTableDataChange($event)"
+    ></pagination-controls>
+    
+    <button
+    (click)="logout()"
+    class="inline-block w-20 rounded bg-purple text-xs font-medium uppercase leading-normal text-white shadow-white transition duration-150 ease-in-out hover:bg-metal hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-metal dark:focus:shadow-metal dark:active:shadow-metal">
+    Sair
+  </button>
+  </div>
+  
+</div>
+
+<div *ngIf="!loginDisplay">
+  <p class="bg-midnight">Please sign-in to see your profile information.</p>
+</div>
